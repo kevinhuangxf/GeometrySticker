@@ -84,10 +84,10 @@
             <span class="author-block">
               <a href="https://kevinhuangxf.github.io/GeometrySticker/">Xiufeng Huang</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a>Ka Chun Cheung</a><sup>2</sup>,
+              Ka Chun Cheung<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Simon See</a><sup>2</sup>,
+              Simon See<sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://wanrenjie.github.io/">Renjie Wan</a><sup>1</sup>
@@ -160,98 +160,87 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <!-- Figure_1. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="text-align: center;">
+          <img src="assets/fig_1.png" alt="Figure 1"  width="60%"/>
+        </div>
+      </div>
+    </div>
+    <!--/ Figure_1. -->
+
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Remarkable advancements in the recolorization of Neural
+            Radiance Fields (NeRF) have simplified the process of modifying NeRF's
+            color attributes. Yet, with the potential of NeRF to serve as shareable
+            digital assets, there's a concern that malicious users might alter the color
+            of NeRF models and falsely claim the recolorized version as their own.
+            To safeguard against such breaches of ownership, enabling original NeRF
+            creators to establish rights over recolorized NeRF is crucial. While ap-
+            proaches like CopyRNeRF have been introduced to embed binary mes-
+            sages into NeRF models as digital signatures for copyright protection,
+            the process of recolorization can remove these binary messages. In our
+            paper, we present GeometrySticker, a method for seamlessly integrating
+            binary messages into the geometry components of radiance fields, akin
+            to applying a sticker. GeometrySticker can embed binary messages into
+            NeRF models while preserving the effectiveness of these messages against
+            recolorization. Our comprehensive studies demonstrate that Geometry-
+            Sticker is adaptable to prevalent NeRF architectures and maintains a
+            commendable level of robustness against various distortions.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+    <!-- Framework. -->
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Framework</h2>
+    </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+        <section class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+                <div style="text-align: center;">
+                  <img src="assets/framework.png" alt="Figure 1"  width="100%"/>
+                </div>
+                <div class="content has-text-justified">
+                  <p>Our proposed scenario for ownership claim over the recolorized NeRF. Users can
+                    construct their NeRF models using readily available platforms, such as NeRFStudio.
+                    Ownership message attachment: They can then swiftly stick binary messages onto
+                    those created NeRF models via our proposed GeometrySticker. These watermarked
+                    NeRF models remain suitable for standard recolorization processes (herein termed Au-
+                    thorized recolorization). Ownership verification: Should unauthorized recolorization
+                    occur, the creators of the NeRF models can retrieve the watermarks from the altered
+                    models to verify ownership.
+                  </p>
+                </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
+    <!--/ Framework. -->
 
   </div>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{huang2024geometrysticker,
+  title     = {GeometrySticker: Enabling Ownership Claim of Recolorized Neural Radiance Fields},
+  author    = {Xiufeng Huang, Ka Chun Cheung, Simon See, Renjie Wan},
+  journal   = {ECCV},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
