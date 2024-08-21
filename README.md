@@ -21,7 +21,15 @@ conda create -n geosticker python=3.8
 
 # install pytorch dependencies
 
-pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
+
+# install tiny-cuda
+
+pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+
+# install torch-scatter
+
+pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cu121.html
 
 # install other dependencies
 
