@@ -197,14 +197,11 @@
                   <img src="assets/framework.png" alt="Figure 1"  width="100%"/>
                 </div>
                 <div class="content has-text-justified">
-                  <p>Our proposed scenario for ownership claim over the recolorized NeRF. Users can
-                    construct their NeRF models using readily available platforms, such as NeRFStudio.
-                    Ownership message attachment: They can then swiftly stick binary messages onto
-                    those created NeRF models via our proposed GeometrySticker. These watermarked
-                    NeRF models remain suitable for standard recolorization processes (herein termed 
-                    Authorized recolorization). Ownership verification: Should unauthorized recolorization
-                    occur, the creators of the NeRF models can retrieve the watermarks from the altered
-                    models to verify ownership.
+                  <p>The framework of our proposed GeometrySticker. We employ a Multilayer Perceptron (MLP) to convert binary messages into a format that aligns with NeRF geometry representation. 
+                    Following this, a learnable Cumulative Distribution Function (CDF) is utilized to select 3D points close to the object surfaces with high geometry values as the cover medium. 
+                    Subsequently, an addition is applied to attach the message (Equation (4)) onto the chosen cover media. 
+                    Through this message attachment process, a watermarked NeRF is generated, capable of retaining its efficacy across diverse recolorizations. 
+                    If any unauthorized changes to color attributes occur, NeRF owners can retrieve the integrated watermarks to assert their ownership.
                   </p>
                 </div>
             </div>
